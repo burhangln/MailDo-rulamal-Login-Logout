@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Account Activation</title>
+    <style>
+      /* Inline-safe styles for emails */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f6f8fa;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        background-color: #ffffff;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #333333;
+        text-align: center;
+      }
+      p {
+        color: #555555;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .code-box {
+        background-color: #f1f3f6;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 4px;
+        font-weight: bold;
+        padding: 15px;
+        margin: 20px 0;
+        color: #007bff;
+      }
+      .footer {
+        text-align: center;
+        font-size: 13px;
+        color: #888888;
+        margin-top: 20px;
+      }
+      a.button {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-top: 15px;
+      }
+      a.button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Activate Your Account</h2>
+      <p>Hello,</p>
+      <p>
+        Thank you for registering! To complete your account setup, please use
+        the following activation code:
+      </p>
+
+      <div class="code-box">{{activationCode}}</div>
+
+      <p>This code will expire in <strong>15 minutes</strong>.</p>
+
+      <p>You can also click the button below to go to the activation page:</p>
+
+      <p style="text-align: center">
+        <a href="{{activationLink}}" class="button">Activate Account</a>
+      </p>
+
+      <div class="footer">
+        <p>If you didn’t request this email, please ignore it.</p>
+        <p>&copy; 2025 Vizja Lab. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

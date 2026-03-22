@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.13.1'
+}
+
+group = 'com.vizja.sw.lab6'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    // slf4j for logging
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+
+    // jackson for json parsing
+    implementation 'tools.jackson.core:jackson-databind:3.0.0'
+
+    // java mail api
+    implementation "org.eclipse.angus:jakarta.mail:2.0.3"
+    implementation "jakarta.mail:jakarta.mail-api:2.1.3"
+    implementation "jakarta.activation:jakarta.activation-api:2.1.3"
+}
+
+test {
+    println("Not Supported")
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.vizja.sw.lab6.Application'
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from(
+            configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    )
+}
